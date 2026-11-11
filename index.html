@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InstaGrow - Azam Aligarh</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:linear-gradient(180deg,#ff2d75,#962fbf,#ff7a00);color:#fff;text-align:center}
+header{padding:20px 10px}header h1{font-size:48px;text-shadow:0 3px 10px rgba(0,0,0,.4)}
+.hero{padding:10px}.hero .face{font-size:100px}
+.hero h2{font-size:28px}.hero h2 span{color:#ffe600}
+.badge{background:#00c853;padding:8px 16px;border-radius:20px;font-weight:900;display:inline-block;margin:10px}
+.pill{background:rgba(255,255,255,.9);color:#111;padding:8px 12px;border-radius:20px;font-size:13px;margin:3px;display:inline-block;font-weight:700}
+.linkbtn{background:#ff5a00;color:#fff;padding:14px 40px;border-radius:30px;font-size:20px;font-weight:900;border:none;margin:12px;cursor:pointer}
+.yellow{color:#ffe600;font-size:22px;font-weight:900}
+.sec{max-width:900px;margin:auto;padding:16px 12px}.sec h2{color:#fff;font-size:24px}
+.box{background:#fff;color:#111;border-radius:16px;padding:16px;margin-top:10px;text-align:left}
+input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0}
+.btn{padding:11px 18px;background:linear-gradient(90deg,#ff0055,#ff7a00);color:#fff;border:none;border-radius:20px;font-weight:900;cursor:pointer}
+.out{background:#fff3d6;padding:12px;border-radius:10px;font-size:13px;line-height:1.7;margin-top:8px;border:1px dashed #ff0055}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;color:#111;border-radius:16px;padding:16px;text-align:center;cursor:pointer}.card b{display:block}
+.price{background:#fff;color:#111;border-radius:16px;padding:16px;text-align:center}.price h2{color:#7b2ff7}
+.wa{background:#25D366;color:#fff;padding:14px;border-radius:30px;display:block;text-align:center;font-weight:900;text-decoration:none;margin-top:12px}
+footer{background:#000;padding:16px}
+</style></head><body>
+<header><h1>InstaGrow</h1><p>Real Followers • No Fake • ID Safe</p></header>
+<div class="hero"><div class="face">👑</div><h2>Azam - Aligarh<br><span>Instagram Grow Karo!</span></h2>
+<input id="instaId" placeholder="Apni ID likho - @azam_aligarh" style="max-width:400px;padding:13px;border-radius:30px;border:none;margin-top:10px;width:90%">
+<br><button class="linkbtn" onclick="checkId()" style="font-size:16px;padding:10px 24px">Check Growth</button>
+<div id="checkOut" style="background:#fff;color:#111;max-width:500px;margin:auto;padding:10px;border-radius:10px;font-size:13px">ID likho - Growth Score batayenge...</div>
+<div style="margin-top:10px"><span class="badge">✅ Real Followers • No Fake</span></div>
+<div><span class="pill"># Free Hashtag</span><span class="pill">✍️ Caption Bio</span><span class="pill">▶️ Reel Ideas</span></div>
+<br><button class="linkbtn" onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">Link in Bio</button>
+<div class="yellow">Follow Karo - Roz Naya Idea</div></div>
+<div class="sec" id="tools"><h2>Tools</h2><div class="grid">
+<div class="card" onclick="scrollToId('sec-hash')">#️⃣<b>Hashtag Generator</b><small>Trending Hashtags</small></div>
+<div class="card" onclick="scrollToId('sec-cap')">✍️<b>Caption Maker</b><small>AI Captions</small></div>
+<div class="card" onclick="scrollToId('sec-bio')">👤<b>Bio Maker</b><small>Profile Bio Ideas</small></div>
+<div class="card" onclick="scrollToId('sec-reel')">🎬<b>Reel Idea</b><small>Roz Naya Idea</small></div>
+<div class="card" onclick="scrollToId('sec-plan')">📅<b>30 Din Plan</b><small>Growth Plan</small></div>
+<div class="card" onclick="scrollToId('sec-calc')">📊<b>Like Calculator</b><small>Kitne Like</small></div>
+</div></div>
+<div class="sec" id="sec-hash"><h2>Hashtag Generator</h2><div class="box"><input id="hashQ" placeholder="Topic - Kapde, Food, Aligarh"><button class="btn" onclick="genHash()">Hashtag Banao</button><div class="out" id="hashOut">Hashtag yahan...</div></div></div>
+<div class="sec" id="sec-cap"><h2>Caption Maker</h2><div class="box"><input id="capQ" placeholder="Photo kis cheez ki hai?"><button class="btn" onclick="genCap()">Caption Banao</button><div class="out" id="capOut">Caption yahan...</div></div></div>
+<div class="sec" id="sec-bio"><h2>Bio Maker</h2><div class="box"><input id="bioQ" placeholder="Tum kya karte ho?"><button class="btn" onclick="genBio()">Bio Banao</button><div class="out" id="bioOut">Bio yahan...</div></div></div>
+<div class="sec" id="sec-reel"><h2>Reel Idea</h2><div class="box"><select id="reelQ"><option>Fashion</option><option>Food</option><option>Business</option><option>Comedy</option><option>Motivation</option></select><button class="btn" onclick="genReel()">Reel Idea Do</button><div class="out" id="reelOut">Idea yahan...</div></div></div>
+<div class="sec" id="sec-plan"><h2>30 Din Plan</h2><div class="box"><button class="btn" onclick="genPlan()">Mera Plan Banao</button><div class="out" id="planOut">Plan yahan...</div></div></div>
+<div class="sec" id="sec-calc"><h2>Like Calculator</h2><div class="box"><input id="folQ" placeholder="Followers kitne hain?"><button class="btn" onclick="calcLike()">Calculate</button><div class="out" id="calcOut">Result yahan...</div></div></div>
+<div class="sec"><h2>Pricing Plans</h2><div class="grid">
+<div class="price"><h2>Rs 499</h2><b>Starter</b><p>✅ 100 Hashtag<br>✅ 30 Caption<br>✅ Bio Pack</p><button class="btn" onclick="buyPlan('STARTER Rs 499')">Order Karo</button></div>
+<div class="price" style="background:linear-gradient(180deg,#7b2ff7,#ff7a00);color:#fff"><span style="background:#ffe600;color:#111;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:900">Most Popular</span><h2 style="color:#fff">Rs 999</h2><b>Pro</b><p>✅ 30 Din Plan<br>✅ 30 Reel Script<br>✅ 30 Din Support</p><button class="btn" onclick="buyPlan('PRO Rs 999')">Order Karo</button></div>
+<div class="price"><h2>Rs 2999</h2><b>Agency</b><p>✅ Page Manage Help<br>✅ Daily Idea<br>✅ Ads Help</p><button class="btn" onclick="buyPlan('AGENCY Rs 2999')">Order Karo</button></div>
+</div><a class="wa" href="https://wa.me/919999999999?text=Hi%20Azam%20Mujhe%20InstaGrow%20Plan%20Chahiye">💬 WhatsApp Pe Baat Karo - Azam</a><p style="font-size:11px;margin-top:6px">919999999999 ko apne number se badal dena</p></div>
+<footer><h2>📸 InstaGrow - Azam Aligarh</h2><p>Secure • Trusted by 10k+ Creators<br>© 2026 InstaGrow</p></footer>
+<script>
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function checkId(){let v=document.getElementById('instaId').value||'@your_id';let s=Math.floor(Math.random()*40+60);document.getElementById('checkOut').innerHTML='<b>'+v+' - Growth Score: '+s+'/100</b><br>Roz 1 Reel + 20 Hashtag + 3 Story - 30 din me 2x Real Growth!';}
+function genHash(){let t=document.getElementById('hashQ').value||'Viral';document.getElementById('hashOut').innerHTML='#'+t.replace(/ /g,'')+' #'+t.replace(/ /g,'')+'Lover #ViralReels #ExplorePage #InstaGrow #Aligarh #Foryou #Growth';}
+function genCap(){let t=document.getElementById('capQ').value||'New Post';document.getElementById('capOut').innerHTML='🔥 '+t+' Aa Gaya! Comment me YES likho 👇 Follow karo! ❤️';}
+function genBio(){let t=document.getElementById('bioQ').value||'Creator';document.getElementById('bioOut').innerHTML='✨ '+t+' | Aligarh 📍<br>🔥 Daily New Content<br>👇 Follow Karo<br>💌 DM for Collab';}
+function genReel(){let c=document.getElementById('reelQ').value;let i={Fashion:'Reel 1: Purana vs Naya Look. Reel 2: ₹500 me 3 Outfit.',Food:'Reel 1: Street Food Challenge. Reel 2: ₹99 me kya milega?',Business:'Reel 1: Business kaise start hua. Reel 2: 1 Din ki Kamai.',Comedy:'Reel 1: Aligarh vs Delhi. Reel 2: Ghar wale vs Dost.',Motivation:'Reel 1: 5 baje uthne wala. Reel 2: Haar mat maano.'};document.getElementById('reelOut').innerHTML='<b>'+c+'</b><br>'+i[c];}
+function genPlan(){document.getElementById('planOut').innerHTML='Day 1-10: Roz 1 Reel + 15 Hashtag<br>Day 11-20: Roz 1 Reel + 3 Story + 20 Comment<br>Day 21-30: Roz 1 Reel + Live + Collab<br><b>Result: 1000-3000 REAL Followers!</b>';}
+function calcLike(){let f=parseInt(document.getElementById('folQ').value)||1000;document.getElementById('calcOut').innerHTML='Likes: '+Math.floor(f*0.08)+' - '+Math.floor(f*0.15)+'<br>Comments: '+Math.floor(f*0.02)+' - '+Math.floor(f*0.05);}
+function buyPlan(p){window.open('https://wa.me/919999999999?text='+encodeURIComponent('Hi Azam! Mujhe '+p+' chahiye. Meri ID: '),'_blank');}
+</script>
+</body></html>
