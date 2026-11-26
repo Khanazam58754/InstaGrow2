@@ -1,99 +1,46 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AzamGram - New Social</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100b1d"><title>ZYNORA — Your World</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#000;color:#fff;max-width:480px;margin:auto;padding-bottom:80px}
-.top{display:flex;justify-content:space-between;padding:14px;font-size:24px;font-weight:900}
-.top span{color:#ff2d55}
-.feature{background:linear-gradient(90deg,#7c3aed,#ff2d55);padding:18px;border-radius:18px;margin:10px}
-.feature h2{font-size:22px}
-.feature p{font-size:13px;opacity:.9}
-.feature button{background:#fff;color:#000;border:none;padding:10px 18px;border-radius:20px;font-weight:bold;margin-top:10px;cursor:pointer}
-.creator{display:flex;gap:12px;overflow:auto;padding:10px}
-.c{text-align:center;font-size:12px;min-width:70px}
-.c img{width:60px;height:60px;border-radius:50%;border:3px solid #ff2d55;object-fit:cover}
-.section{padding:12px}
-.card{background:#111;border-radius:16px;overflow:hidden;margin:12px 0}
-.card img{width:100%;height:220px;object-fit:cover}
-.card div{padding:12px}
-.badge{background:#ff2d55;font-size:11px;padding:4px 8px;border-radius:10px}
-.badge2{background:#f59e0b;color:#000;font-size:11px;padding:4px 8px;border-radius:10px}
-input{width:100%;padding:13px;border-radius:12px;border:none;background:#1a1a1a;color:#fff;margin:5px 0}
-button.main{width:100%;padding:14px;border:none;border-radius:12px;font-weight:bold;color:#fff;background:linear-gradient(90deg,#ff2d55,#7c3aed);cursor:pointer;margin:5px 0}
-.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#111;display:flex;justify-content:space-around;padding:15px;font-size:24px;border-top:1px solid #222;z-index:99}
-.like{cursor:pointer;font-size:22px}
-.hashtag{display:inline-block;background:#1a1a1a;padding:8px 14px;border-radius:20px;margin:4px;font-size:13px}
+:root{--bg:#0d0915;--panel:#171122;--panel2:#211832;--line:#302442;--text:#f8f4ff;--muted:#aa9dbb;--purple:#a855f7;--pink:#ec4899;--glow:0 0 28px #a855f733}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#46206a55,transparent 35%),var(--bg);color:var(--text);font:15px/1.45 Inter,system-ui,Arial}button,input,textarea{font:inherit}button{cursor:pointer;color:inherit}.app{max-width:1200px;margin:auto;min-height:100vh}.top{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#100b1df2;backdrop-filter:blur(16px);z-index:5}.brand{font-size:25px;font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,#c084fc,#f0abfc,#f472b6);-webkit-background-clip:text;color:transparent}.search{width:min(360px,38vw);background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:11px 16px;color:white;outline:none}.top-actions{display:flex;gap:10px}.iconbtn,.btn{border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:10px 13px}.btn.primary{border:0;background:linear-gradient(110deg,#9333ea,#db2777);font-weight:750;box-shadow:var(--glow)}.layout{display:grid;grid-template-columns:220px minmax(0,620px) 270px;gap:22px;padding:22px}.side{position:sticky;top:90px;height:max-content}.navitem{display:flex;align-items:center;gap:13px;padding:13px 14px;border-radius:13px;color:var(--muted);margin:4px 0;border:0;background:transparent;width:100%;text-align:left}.navitem.active,.navitem:hover{background:#a855f71c;color:white}.navitem b{font-size:19px;width:22px;text-align:center}.side .btn{width:100%;margin:14px 0}.main{min-width:0}.stories{display:flex;gap:14px;overflow:auto;padding:15px;background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-bottom:18px}.story{flex:0 0 64px;text-align:center;font-size:12px;color:var(--muted)}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;margin:0 auto 6px;background:linear-gradient(135deg,#9333ea,#ec4899);padding:3px}.avatar span{background:#21172e;width:100%;height:100%;border-radius:50%;display:grid;place-items:center;font-weight:800;color:white}.story.add .avatar{background:linear-gradient(135deg,#9333ea,#ec4899)}.composer{display:flex;align-items:center;gap:12px;padding:15px;background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-bottom:18px}.composer input{flex:1;min-width:0;background:transparent;border:0;color:white;outline:0}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-bottom:18px;overflow:hidden}.posthead{display:flex;align-items:center;gap:10px;padding:14px}.posthead .avatar{width:42px;height:42px;margin:0}.user{font-weight:750}.sub{font-size:12px;color:var(--muted)}.dots{margin-left:auto;background:none;border:0;font-size:22px;color:var(--muted)}.postimg{height:350px;display:grid;place-items:center;text-align:center;padding:25px;background:linear-gradient(135deg,#32144d,#6b237e 55%,#bd438d);font-size:28px;font-weight:850;letter-spacing:-1px}.postimg.alt{background:linear-gradient(135deg,#172d4e,#43256c,#a04482)}.postimg.third{background:linear-gradient(135deg,#172e2a,#265d57,#784b82)}.postimg small{display:block;font-size:13px;letter-spacing:2px;color:#f2d9ff;margin-top:12px}.posttools{display:flex;gap:16px;padding:12px 15px 4px}.tool{background:none;border:0;font-size:23px;padding:2px}.tool.liked{color:#fb4b9b}.postbody{padding:5px 15px 15px}.caption{margin:7px 0}.comments{color:var(--muted);font-size:13px}.rightbox{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:16px}.rightbox h3{margin:0 0 14px;font-size:15px}.suggest{display:flex;align-items:center;gap:10px;margin:13px 0}.suggest .avatar{width:38px;height:38px;margin:0}.suggest button{margin-left:auto;color:#d8a5ff;background:none;border:0;font-weight:700}.ai{background:linear-gradient(145deg,#28143e,#21152e);border-color:#62328a;box-shadow:var(--glow)}.ai p{font-size:13px;color:var(--muted)}.page{display:none}.page.active{display:block}.page-title{font-size:25px;margin:3px 0 16px}.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.tile{min-height:145px;border-radius:16px;padding:18px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(145deg,#55217d,#b0448c);font-weight:800}.tile:nth-child(2){background:linear-gradient(145deg,#1c4563,#6a3ca1)}.tile:nth-child(3){background:linear-gradient(145deg,#28574e,#8d4d8a)}.tile:nth-child(4){background:linear-gradient(145deg,#653b26,#b34e77)}.reel{height:460px;border-radius:18px;background:linear-gradient(145deg,#28154a,#8b3485,#e45d94);display:grid;place-items:center;text-align:center;font-size:28px;font-weight:900}.chatrow{padding:15px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center}.profilehead{text-align:center;padding:24px}.profilehead .avatar{width:90px;height:90px}.stats{display:flex;justify-content:center;gap:30px;margin:18px}.stats b{display:block;font-size:20px}.muted{color:var(--muted)}.bottom{display:none;position:fixed;bottom:0;left:0;right:0;background:#130d20f5;border-top:1px solid var(--line);padding:8px 5px calc(8px + env(safe-area-inset-bottom));z-index:8;justify-content:space-around}.bottom button{background:none;border:0;color:var(--muted);font-size:21px}.bottom button.active{color:#d8a5ff}.modal{display:none;position:fixed;inset:0;background:#000b;z-index:20;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}.modalbox{width:min(480px,100%);background:var(--panel);border:1px solid #69418b;border-radius:20px;padding:20px;box-shadow:var(--glow)}.modalbox input,.modalbox textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#100b1d;color:white;margin:8px 0}.modalbox textarea{min-height:100px}.modalhead{display:flex;justify-content:space-between;align-items:center}.notice{color:#cbb8dd;font-size:12px;margin-top:12px}
+@media(max-width:950px){.layout{grid-template-columns:190px minmax(0,1fr)}.right{display:none}}
+@media(max-width:650px){.top{height:60px;padding:0 14px}.search{width:38vw;padding:9px 12px}.top-actions .iconbtn:first-child{display:none}.layout{display:block;padding:13px 12px 86px}.side{display:none}.bottom{display:flex}.postimg{height:290px}.stories{gap:10px}.right{display:none}.brand{font-size:21px}.tiles{grid-template-columns:1fr 1fr}.page-title{font-size:22px}}
 </style>
 </head>
-<body>
-
-<div class="top"><div>Azam<span>Gram</span> ✨</div><div>💬 🔔</div></div>
-
-<!-- FEATURED -->
-<div class="feature">
-<p>⭐ FEATURED / TRENDING NOW</p>
-<h2>Today's Top Creator<br>👑 Aryan Sharma - 2.4M Views</h2>
-<button onclick="alert('Featured Post Open Ho Gaya!')">▶️ Watch Now</button>
-</div>
-
-<div class="section"><b>🔥 Trending Creators</b></div>
-<div class="creator">
-<div class="c"><img src="https://i.pravatar.cc/100?img=12"><br>Aryan ✅</div>
-<div class="c"><img src="https://i.pravatar.cc/100?img=32"><br>Riya ✅</div>
-<div class="c"><img src="https://i.pravatar.cc/100?img=5"><br>Kabir ✅</div>
-<div class="c"><img src="https://i.pravatar.cc/100?img=47"><br>Ananya ✅</div>
-<div class="c"><img src="https://i.pravatar.cc/100?img=68"><br>Zara ✅</div>
-</div>
-
-<div class="section">
-<b>🚀 Naya Post Banao</b>
-<input id="cap" placeholder="Caption likho...">
-<button class="main" onclick="aiCap()">🤖 AI Caption Banao</button>
-<button class="main" style="background:#0095f6" onclick="postNow()">📸 Post Karo</button>
-<p id="msg" style="color:#0f0;margin-top:8px"></p>
-</div>
-
-<div class="section">
-<b>🔥 Trending Hashtags</b><br>
-<span class="hashtag">#DesiVibes</span><span class="hashtag">#BollywoodDance</span><span class="hashtag">#IndiaTravel</span><span class="hashtag">#Agra</span>
-</div>
-
-<!-- FEED -->
-<div class="section"><b>📸 Featured Feed</b></div>
+<body><div class="app">
+<header class="top"><div class="brand">ZYNORA</div><input class="search" id="search" placeholder="⌕  Search people, posts..." oninput="searchPosts(this.value)"><div class="top-actions"><button class="iconbtn" onclick="showPage('messages')">✉</button><button class="iconbtn" onclick="showPage('notifications')">♡</button></div></header>
+<div class="layout">
+<aside class="side"><button class="navitem active" data-page="home" onclick="showPage('home')"><b>⌂</b> Home</button><button class="navitem" data-page="explore" onclick="showPage('explore')"><b>⌕</b> Explore</button><button class="navitem" data-page="reels" onclick="showPage('reels')"><b>▣</b> Reels</button><button class="navitem" data-page="messages" onclick="showPage('messages')"><b>✉</b> Messages</button><button class="navitem" data-page="notifications" onclick="showPage('notifications')"><b>♡</b> Notifications</button><button class="navitem" data-page="profile" onclick="showPage('profile')"><b>◉</b> Profile</button><button class="btn primary" onclick="openModal()">＋ Create post</button><div class="rightbox ai"><h3>✦ Zynora AI</h3><p>Your creative sidekick. Get captions, post ideas and profile tips.</p><button class="btn" onclick="showPage('ai')">Try AI Assistant →</button></div></aside>
+<main class="main">
+<section class="page active" id="home">
+<div class="stories"><div class="story add" onclick="openModal()"><div class="avatar"><span>＋</span></div>Your story</div><div class="story"><div class="avatar"><span>AR</span></div>arjun</div><div class="story"><div class="avatar"><span>SA</span></div>sana</div><div class="story"><div class="avatar"><span>MK</span></div>mika</div><div class="story"><div class="avatar"><span>RI</span></div>riya</div><div class="story"><div class="avatar"><span>ZA</span></div>zayn</div></div>
+<div class="composer"><div class="avatar"><span>Y</span></div><input placeholder="Share something with your world..." onclick="openModal()" readonly><button class="btn primary" onclick="openModal()">Post</button></div>
 <div id="feed">
-<div class="card">
-<img src="https://picsum.photos/500/400?random=11">
-<div><b>ayesha_official ✅</b> <span class="badge">👑 FEATURED</span><br><br>
-<span class="like" onclick="like(this)">❤️ <span>1245</span></span> &nbsp; 💬 &nbsp; ↗️ &nbsp; 🔖<br><br>
-<b>1245 Likes • ₹125 Earning</b><br>Agra ki shaam ❤️ #DesiVibes</div>
+<article class="card post" data-search="arjun travel mountains explore nature"><div class="posthead"><div class="avatar"><span>AR</span></div><div><div class="user">arjun.travels</div><div class="sub">2 hours ago · Public</div></div><button class="dots">···</button></div><div class="postimg"><div>FIND YOUR<br>OWN HORIZON<small>THE WORLD IS WAITING</small></div></div><div class="posttools"><button class="tool" onclick="like(this)">♡</button><button class="tool" onclick="alert('Comments demo: comments will be enabled with the live backend.')">♧</button><button class="tool" onclick="alert('Share link will be available when the website is published.')">↗</button><button class="tool" style="margin-left:auto" onclick="this.classList.toggle('liked');this.textContent=this.classList.contains('liked')?'▣':'▢'">▢</button></div><div class="postbody"><div><b class="likecount">1,248</b> likes</div><div class="caption"><b>arjun.travels</b> Some places make you feel more alive. ✨</div><div class="comments">View all 38 comments</div></div></article>
+<article class="card post" data-search="sana art design creativity"><div class="posthead"><div class="avatar"><span>SA</span></div><div><div class="user">sana.creates</div><div class="sub">5 hours ago · Public</div></div><button class="dots">···</button></div><div class="postimg alt"><div>CREATE<br>WITHOUT LIMITS<small>IDEAS BECOME REAL</small></div></div><div class="posttools"><button class="tool" onclick="like(this)">♡</button><button class="tool" onclick="alert('Comments demo: coming with backend.')">♧</button><button class="tool" onclick="alert('Share will work after publishing.')">↗</button><button class="tool" style="margin-left:auto" onclick="this.classList.toggle('liked')">▢</button></div><div class="postbody"><div><b class="likecount">892</b> likes</div><div class="caption"><b>sana.creates</b> A little creativity can change everything. 💜</div></div></article>
+</div></section>
+<section class="page" id="explore"><h2 class="page-title">Explore your world</h2><p class="muted">Discover creators, communities and ideas.</p><div class="tiles"><div class="tile">Photography <small>Explore creators</small></div><div class="tile">Technology <small>Trending now</small></div><div class="tile">Travel <small>Find inspiration</small></div><div class="tile">Art & Design <small>Fresh ideas</small></div></div></section>
+<section class="page" id="reels"><h2 class="page-title">Zynora Reels</h2><div class="reel"><div>▶<br>Short videos.<br>Big moments.<p class="sub">Video playback and uploads activate with media storage.</p></div></div></section>
+<section class="page" id="messages"><h2 class="page-title">Messages</h2><div class="card"><div class="chatrow"><div class="avatar"><span>SA</span></div><div><b>sana.creates</b><div class="sub">Hey! Welcome to Zynora 👋</div></div></div><div class="chatrow"><div class="avatar"><span>AR</span></div><div><b>arjun.travels</b><div class="sub">Shared a new post</div></div></div><div class="chatrow"><div class="avatar"><span>MK</span></div><div><b>mika.design</b><div class="sub">Let's connect!</div></div></div></div><p class="notice">Demo inbox only. Real-time private messaging requires user accounts and a connected backend.</p></section>
+<section class="page" id="notifications"><h2 class="page-title">Notifications</h2><div class="card"><div class="chatrow">💜 <span><b>sana.creates</b> liked your post <span class="sub">· 10m</span></span></div><div class="chatrow">＋ <span><b>arjun.travels</b> started following you <span class="sub">· 1h</span></span></div><div class="chatrow">✦ <span>Welcome to the Zynora community! <span class="sub">· Today</span></span></div></div></section>
+<section class="page" id="profile"><div class="card profilehead"><div class="avatar"><span>Y</span></div><h2>Your Name</h2><div class="muted">@yourusername</div><p>Creating my own world on Zynora 💜</p><div class="stats"><div><b id="postnum">0</b><span class="sub">Posts</span></div><div><b>128</b><span class="sub">Followers</span></div><div><b>96</b><span class="sub">Following</span></div></div><button class="btn" onclick="alert('Profile editing will be connected to your account in the live version.')">Edit profile</button></div><h3>Your posts</h3><div id="myPosts" class="muted">Your published demo posts will appear here.</div></section>
+<section class="page" id="ai"><h2 class="page-title">✦ Zynora AI Assistant</h2><div class="rightbox ai"><h3>Your creative sidekick</h3><p>Choose what you need help with. This prototype uses sample suggestions; live AI requires an API connection.</p><button class="btn" onclick="aiIdea('caption')">✍ Generate a caption</button> <button class="btn" onclick="aiIdea('ideas')">💡 Post ideas</button><button class="btn" onclick="aiIdea('bio')">◉ Profile bio</button><div id="airesult" style="margin-top:16px;line-height:1.7"></div></div></section>
+</main>
+<aside class="right"><div class="rightbox"><h3>People to follow <span class="muted">· See all</span></h3><div class="suggest"><div class="avatar"><span>SA</span></div><div><b>sana.creates</b><div class="sub">Digital creator</div></div><button onclick="follow(this)">Follow</button></div><div class="suggest"><div class="avatar"><span>AR</span></div><div><b>arjun.travels</b><div class="sub">Travel blogger</div></div><button onclick="follow(this)">Follow</button></div><div class="suggest"><div class="avatar"><span>MK</span></div><div><b>mika.design</b><div class="sub">Artist</div></div><button onclick="follow(this)">Follow</button></div></div><div class="rightbox ai"><h3>✦ Meet Zynora AI</h3><p>Write better captions, discover ideas and grow your creative voice.</p><button class="btn primary" onclick="showPage('ai')">Explore AI</button></div><div class="muted" style="font-size:11px;padding:8px">About · Help · Privacy · Terms<br><br>© 2026 ZYNORA</div></aside>
 </div>
-
-<div class="card">
-<img src="https://picsum.photos/500/400?random=22">
-<div><b>arman_khan ✅</b> <span class="badge2">🎙️ Voice Post</span><br><br>
-<span class="like" onclick="like(this)">❤️ <span>892</span></span> &nbsp; 💬 &nbsp; ↗️ &nbsp; 🔖<br><br>
-<b>892 Likes • ₹89 Earning</b><br>Naya gaana suno!</div>
+<nav class="bottom"><button class="active" onclick="showPage('home',this)">⌂</button><button onclick="showPage('explore',this)">⌕</button><button onclick="openModal()">＋</button><button onclick="showPage('reels',this)">▣</button><button onclick="showPage('profile',this)">◉</button></nav>
 </div>
-</div>
-
-<div class="nav"><span>🏠</span><span>🔍</span><span>➕</span><span>🎬</span><span>👤</span></div>
-
+<div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><h2>Create a post</h2><button class="iconbtn" onclick="closeModal()">✕</button></div><input id="posttitle" placeholder="Post title"><textarea id="posttext" placeholder="What's on your mind?"></textarea><input id="posttag" placeholder="Add a topic (optional)"><button class="btn primary" style="width:100%;margin-top:8px" onclick="publish()">Publish demo post</button><div class="notice">Demo mode: this post is saved only in this browser. Public posting needs a live account and server.</div></div></div>
 <script>
-function like(el){let s=el.querySelector('span');s.innerText=parseInt(s.innerText)+1;el.style.color='red';}
-function aiCap(){
-let a=["Agra ki vibe alag hai 🔥","Aaj ka din mera hai ✨","Dil se Agra se ❤️","New update, new me 💯"];
-document.getElementById('cap').value=a[Math.floor(Math.random()*a.length)];
-document.getElementById('msg').innerText="✅ AI ne Caption bana diya!";
-}
-function postNow(){
-let c=document.getElementById('cap').value||"Mera naya post!";
-document.getElementById('msg').innerText="✅ Post ho gaya! "+c;
-alert("Post Successful! AzamGram me Live!");
-}
-</script>
-</body>
-</html>
+function showPage(id,el){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));let target=document.getElementById(id);if(target)target.classList.add('active');document.querySelectorAll('.navitem').forEach(n=>n.classList.toggle('active',n.dataset.page===id));document.querySelectorAll('.bottom button').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function like(btn){btn.classList.toggle('liked');btn.textContent=btn.classList.contains('liked')?'♥':'♡';let c=btn.closest('.card').querySelector('.likecount');let n=parseInt(c.textContent.replace(',',''));c.textContent=(n+(btn.classList.contains('liked')?1:-1)).toLocaleString()}
+function follow(btn){btn.textContent=btn.textContent==='Follow'?'Following':'Follow';btn.style.color=btn.textContent==='Following'?'#a78bfa':''}
+function openModal(){document.getElementById('modal').classList.add('show')}function closeModal(){document.getElementById('modal').classList.remove('show')}
+function publish(){let title=document.getElementById('posttitle').value.trim()||'A moment from my world';let txt=document.getElementById('posttext').value.trim();if(!txt){alert('Please write something before publishing.');return}let post=document.createElement('article');post.className='card post';post.dataset.search=(title+' '+txt).toLowerCase();post.innerHTML='<div class="posthead"><div class="avatar"><span>Y</span></div><div><div class="user">yourusername</div><div class="sub">Just now · Demo post</div></div></div><div class="postimg third"><div>'+escapeHtml(title.toUpperCase())+'<small>SHARED ON ZYNORA</small></div></div><div class="posttools"><button class="tool" onclick="like(this)">♡</button><button class="tool">♧</button><button class="tool">↗</button></div><div class="postbody"><div><b class="likecount">0</b> likes</div><div class="caption"><b>yourusername</b> '+escapeHtml(txt)+'</div></div>';document.getElementById('feed').prepend(post);document.getElementById('myPosts').textContent='You have published a demo post.';document.getElementById('postnum').textContent=String(Number(document.getElementById('postnum').textContent)+1);closeModal();document.getElementById('posttitle').value='';document.getElementById('posttext').value='';showPage('home')}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function searchPosts(q){document.querySelectorAll('.post').forEach(p=>p.style.display=(!q||(p.dataset.search||'').includes(q.toLowerCase())||p.innerText.toLowerCase().includes(q.toLowerCase()))?'':'none');if(q)showPage('home')}
+function aiIdea(type){let t={caption:'Chasing little moments and collecting big memories. ✨ #MyWorld #Zynora',ideas:'1. A day in my life\\n2. Three things that inspire me\\n3. A behind-the-scenes look\\n4. Share a skill you are learning',bio:'Creator | Dreamer | Exploring new possibilities 💜\\nSharing moments, ideas and inspiration.'};document.getElementById('airesult').innerText=t[type]}
+</script></body></html>
